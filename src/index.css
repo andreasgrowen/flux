@@ -88,10 +88,12 @@ body {
     background-color: hsl( var(--clr-dark) );
     line-height: 1.5;
     min-height: 100vh;
-    
+
     display: grid;
     grid-template-rows: min-content 1fr;
 }
+    
+
 
 
 /* make images easier to work with */
@@ -183,7 +185,6 @@ select {
 
     .grid-container--home{
         
-     
      
     }
 }
@@ -356,20 +357,20 @@ body{
 }
 
 .home{
-   background-image: url(../public/assets/home/background-home-mobile.jpg);
+   background-image: url(./assets/home/background-home-mobile.jpg);
  
 }
 
 @media (min-width:35rem){
     .home{
-        background-image: url(../public/assets/home/background-home-tablet.jpg);
+        background-image: url(./assets/home/background-home-tablet.jpg);
       
      }
 
 }
 @media (min-width:45rem){
     .home{
-        background-image: url(../public/assets/home/background-home-desktop.jpg);
+        background-image: url(./assets/home/background-home-desktop.jpg);
       
      }
 
