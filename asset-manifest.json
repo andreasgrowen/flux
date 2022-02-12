@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/flux/static/css/main.10ebfb2e.css",
+    "main.js": "/flux/static/js/main.7fb3939d.js",
+    "static/js/787.8c0fc3f6.chunk.js": "/flux/static/js/787.8c0fc3f6.chunk.js",
+    "static/media/background-home-desktop.jpg": "/flux/static/media/background-home-desktop.cdf3864ecbfdf20e8c3b.jpg",
+    "static/media/background-home-tablet.jpg": "/flux/static/media/background-home-tablet.bc9efcc3281fa6801077.jpg",
+    "static/media/background-home-mobile.jpg": "/flux/static/media/background-home-mobile.13f7adecbcb3c3f170d8.jpg",
+    "index.html": "/flux/index.html",
+    "main.10ebfb2e.css.map": "/flux/static/css/main.10ebfb2e.css.map",
+    "main.7fb3939d.js.map": "/flux/static/js/main.7fb3939d.js.map",
+    "787.8c0fc3f6.chunk.js.map": "/flux/static/js/787.8c0fc3f6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10ebfb2e.css",
+    "static/js/main.7fb3939d.js"
+  ]
+}
