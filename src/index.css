@@ -89,8 +89,8 @@ body {
     line-height: 1.5;
     min-height: 100vh;
 
-    display: grid;
-    grid-template-rows: min-content 1fr;
+    overflow-x:hidden;
+ 
 }
     
 
@@ -156,11 +156,12 @@ select {
 
 .grid-container {
     text-align: center;
-    border: 5px solid limegreen;
+  
     display: grid;
     place-items: center;
     row-gap: 10%;
     padding-inline: 1rem;
+    height: 80vh;
 }
 
 .grid-container * {
@@ -169,26 +170,28 @@ select {
 
 @media (min-width: 45em) {
     .grid-container {
+        text-align: left;
         column-gap: var(--container-gap, 2rem);
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
     }
     
     .grid-container > *:first-child {
         grid-column: 2;
-        outline: 1px solid red;
+        
     }
 
     .grid-container > *:last-child {
         grid-column: 3;
-        outline: 1px solid yellow;
+       
     }
 
     .grid-container--home{
+        padding-bottom: max(5rem,9vh);
+        align-items: end;
         
      
     }
 }
-
 
 
 
@@ -290,13 +293,60 @@ select {
     transform: scale(1.5);
 }
 
+
 .primary-navigation {
-    --gap: 8rem;
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
+    background: hsl( var(--clr-dark) / .95);
+    
 }
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+@supports(backdrop-filter: blur(1.5rem)){
+    .primary-navigation {
+      background: hsl( var(--clr-white) / .05);
+      backdrop-filter: blur(1.5rem);
+        
+    }
+}
+
+@media (max-width: 35rem) {
+    .primary-navigation {
+        --underline-gap: 0.5rem;
+        position: fixed;
+        inset: 0 0 0 20%;
+        z-index: 1000;
+        list-style: none;
+        padding: min(20rem,15vh) 2rem;
+        margin: 0;
+        flex-direction: column;
+        transform: translateX(100%)
+    }
+    .primary-navigation.underline-indicators > .active {
+        border: 0;
+
+    }
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 1rem;
+        top: 2rem;
+        background: transparent;
+        background-image: url(./assets/shared/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        aspect-ratio: 1/2;       
+        border:0;
+
+    }
+}
+
+
 
 .primary-navigation a {
     text-decoration: none;
