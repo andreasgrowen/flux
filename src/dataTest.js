@@ -1,4 +1,5 @@
 export default {
+    mobileMenuVisible: false,
     menuElements: [
         {
             id: "00",

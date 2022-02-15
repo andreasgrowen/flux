@@ -6,6 +6,7 @@ import dataTest from "../dataTest"
 export default function NavBar() {
 
     const [menuElements, setMenuElements] = React.useState(dataTest.menuElements)
+    const [mobileMenuVisible, setMobileMenuVisible] = React.useState(dataTest.mobileMenuVisible)
 
     console.log(menuElements)
 
@@ -28,6 +29,12 @@ export default function NavBar() {
         })
 
     }
+    function handleClickMobile() {
+        setMobileMenuVisible(prev => {
+            return !prev
+        })
+        console.log(mobileMenuVisible)
+    }
 
 
     return (
@@ -35,20 +42,14 @@ export default function NavBar() {
             <div>
                 <img src={logo} alt="Enter The Flux logo" className="logo" />
             </div>
-            <button className="mobile-nav-toggle" aria-controls="primary-navigation"><span className="sr-only" aria-expanded="false">Menu</span></button>
+            <button className="mobile-nav-toggle " data-visible={mobileMenuVisible ? "true" : "false"} aria-controls="primary-navigation" onClick={handleClickMobile}><span className="sr-only" aria-expanded={mobileMenuVisible ? "true" : "false"}>Menu</span></button>
             <nav>
-                <ul className="primary-navigation underline-indicators flex ff-sans-cond">
+                <ul data-visible={mobileMenuVisible ? "true" : "false"} className="primary-navigation underline-indicators flex ff-sans-cond">
                     {menu}
                 </ul>
             </nav>
+            {/*<!-- my ::after is here -->*/}
         </header>
 
     )
 }
-
-
-
-/*                  <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>00</span>Home</a></li>
-                    <li><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>The Flux</a></li>
-                    <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Crew</a></li>
-                    <li><a class="uppercase text-white letter-spacing-2" href="#"><span>0</span>Technology</a></li>*/
